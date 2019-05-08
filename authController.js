@@ -39,7 +39,7 @@ router.post('/register', (req, res)=>{
             res.status(500).send('Prob')
         }
 
-        var token = jwt.sign({id: res._id}, config.secret, {
+        var token = jwt.sign({id: user._id}, config.secret, {
             expiresIn: 86400
         })
         console.log(token, 'token');

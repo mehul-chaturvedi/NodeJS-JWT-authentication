@@ -15,7 +15,7 @@ router.post('/login', (req, res)=>{
         if(req.body.pass !== user.password)
         {res.status(404).send({auth: false, token: null})}
 
-        var token = jwt.sign({id: res._id}, config.secret, {
+        var token = jwt.sign({id: user._id}, config.secret, {
             expiresIn: 86400
         })
 
